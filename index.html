@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Unblock</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="import" href="html/lvl.html">
+
+</head>
+
+<body>
+<link href='//fonts.googleapis.com/css?family=Asap:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Signika+Negative:300,400,700' rel='stylesheet' type='text/css'>
+
+
+<div class = 'moves_line'>
+		<div class="moves" id = 'bestMovesLine'>
+			<h1>Best moves</h1>
+			<h1 id="bestMoves" ></h1>
+		</div>
+
+		<div class="moves" id = "currentMoves">
+			<h1>Moves</h1>
+			<h1 id="moves">0</h1>
+		</div>
+	</div>
+
+	<!-- Импорт уровня -->
+	<script>
+			var currentLevel = '#lvl_' + localStorage.getItem('current_level');
+      var link = document.querySelector('link[rel=import]');
+			var content = link.import.querySelector(currentLevel);
+			document.body.appendChild(content.cloneNode(true));
+	</script>
+
+
+	<div class="icon_line">
+
+		<div class="icons" id = 'menu'>
+			<input type="button" id="menu_icon" onclick="javascript:window.location='menu.html'"/>
+			<h2>Menu</h2>
+		</div>
+
+		<div class = "icons" id = "restart">
+			<button onclick=back_restart(1); id = "restart_icon"></button>
+			<h2>Try Again</h2>
+		</div>
+
+		<div class = "icons" id = "back">
+			<button onclick=back_restart(0); id = "back_icon"></button>
+			<h2>Back</h2>
+		</div>
+
+	</div>
+
+
+	<script src="minified/TweenMax.min.js"></script>
+	<script src="minified/plugins/CSSPlugin.min.js"></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="minified/utils/Draggable.min.js"></script>
+	<script src="js/index.js"></script>
+</body>
+</html>
